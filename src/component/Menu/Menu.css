@@ -1,0 +1,29 @@
+.menu{
+    width: 500px;
+    height: 630px;
+    border: 1px solid wheat;
+    border-radius: 8px;
+    position: relative;
+}
+
+.menu img{
+    height: 305px;
+    width: 480px;
+    margin: 7px;
+    border-radius: 8px;
+
+}
+.menu-info{
+    margin: 7px;
+}
+
+.btn{
+    width: 480px;
+    background-color:wheat;
+    margin:10px;
+    color: black;
+    position:absolute;
+    bottom: 0;
+    
+  
+}
