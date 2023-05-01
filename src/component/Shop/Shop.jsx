@@ -3,37 +3,35 @@ import Menu from '../Menu/Menu';
 import './Shop.css'
 import Cart from '../Cart/Cart';
 
-
-
-
 const Shop = () => {
-    const [products, setProduct] = useState([]);
-    useEffect(()=>{
+    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
+    
+    useEffect(() => {
         fetch('fakebd.json')
-        .then(res =>res.json())
-        .then(data => setProduct(data))
-        
-    },[])
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, [])
+
+    const addToCart = (product) => {
+        const newCart = [...cart, product];
+        setCart(newCart);
+    }
+    
     return (
         <div className='shop-container'>
             <div className='product-container'>
                 {
-                   products.map(Product => <Menu
-                   key = {Product.id}
-                   Product={Product}
+                   products.map(product => <Menu
+                   key={product.id}
+                   product={product}
+                   addToCart={addToCart}
                    ></Menu> )
                 }
-
             </div>
             <div className='cart-conatainer'>
-                
-                    
-                         <Cart
-                       
-                        ></Cart>
-                    
+                <Cart cart={cart} />
             </div>
-            
         </div>
     );
 };

@@ -2,8 +2,10 @@ import React from 'react';
 import './Menu.css'
 
 const Menu = (props) => {
-    const {name,image,age,Time,details} = props.Product
-    const btnClick =props.Product;
+   
+    
+    const {name,image,age,Time,details} = props.product;
+    
   
     return (
         <div className='menu'>
@@ -16,7 +18,7 @@ const Menu = (props) => {
             <h5>Time Required : {Time}</h5>
             </div>
            
-           <button id='myButton' className='btn' onClick={()=>btnClick(props.Product)}><span className='btnName'>Add to list</span></button>
+           <button id='myButton' className='btn'  onClick={() => props.addToCart(props.product)}><span className='btnName'>Add to list</span></button>
            
         </div>
     );
