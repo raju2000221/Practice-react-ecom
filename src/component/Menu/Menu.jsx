@@ -7,8 +7,9 @@ const Menu = (props) => {
   
     return (
         <div className='menu'>
-            <div className='menu-info'>
             <img src={image}></img>
+            <div className='menu-info'>
+            
             <h4>{name}</h4>
             <p>{details}</p>
             <h5>For age : {age}</h5>
